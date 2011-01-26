@@ -48,13 +48,14 @@ sub init {
         );
     }
 
-    my $path = File::ShareDir::class_file(
+    my $path = File::ShareDir::dist_file(
+        'Parse-ACNS',
         File::Spec->catfile( 'schema', $self->{'version'}, 'infringement.xsd' )
     );
 
     $self->{'reader'} = $CACHE{$path}{'reader'};
     unless ( $self->{'reader'} ) {
-        my $schema = XML::Compile::Schema( [$path] );
+        my $schema = XML::Compile::Schema->new( [$path] );
         $self->{'reader'} = $schema->compile( READER => 'Infringement' );
     }
     return $self;
