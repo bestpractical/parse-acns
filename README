@@ -1,0 +1,17 @@
+NAME
+    Parse::ACNS - parser for Automated Copyright Notice System (ACNS) XML
+
+SYNOPSIS
+        use Parse::ACNS;
+        my $parser = Parse::ACNS->new(
+            version => 'compat',
+        );
+        $parser->parse( );
+
+DESCRIPTION
+AUTHOR
+    Ruslan Zakirov <ruz@bestpractical.com>
+
+LICENSE
+    Under the same terms as perl itself.
+
