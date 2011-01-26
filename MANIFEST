@@ -1,0 +1,26 @@
+.gitignore
+Changes
+inc/Module/Install.pm
+inc/Module/Install/Base.pm
+inc/Module/Install/Can.pm
+inc/Module/Install/Fetch.pm
+inc/Module/Install/Makefile.pm
+inc/Module/Install/Metadata.pm
+inc/Module/Install/ReadmeFromPod.pm
+inc/Module/Install/Share.pm
+inc/Module/Install/Win32.pm
+inc/Module/Install/WriteAll.pm
+lib/Parse/ACNS.pm
+Makefile.PL
+MANIFEST			This list of files
+META.yml
+README
+share/schema/0.6/infringement.xsd
+share/schema/0.7/infringement.xsd
+share/schema/compat/infringement.xsd
+t/basics.t
+t/data/0.6/full.xml
+t/data/0.6/full.yaml
+t/data/0.7/full.xml
+t/data/0.7/full.yaml
+t/parse.t
