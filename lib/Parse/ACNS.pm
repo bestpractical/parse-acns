@@ -66,46 +66,6 @@ sub parse {
     return $self->{'reader'}->( shift );
 }
 
-sub parse_any {
-    my $self = shift;
-    my $source = shift;
-    if ( blessed($source) ) {
-        if ( $source->isa('XML::LibXML') ) {
-            return $self->parse( $source );
-        }
-        else {
-            require Carp;
-            Carp::croak('Parsing from object of type '. ref($source) . ' is not supported');
-        }
-    }
-    elsif ( ref $source ) {
-        return $self->parse_fh( $source );
-    }
-    else {
-        if ( -e $source ) {
-            return $self->parse_file( $source );
-        }
-        else {
-            return $self->parse_string( $source );
-        }
-    }
-}
-
-sub parse_string {
-    my $self = shift;
-    return $self->parse( XML::LibXML->new->parse_string(shift) );
-}
-
-sub parse_file {
-    my $self = shift;
-    return $self->parse( XML::LibXML->new->parse_file(shift) );
-}
-
-sub parse_fh {
-    my $self = shift;
-    return $self->parse( XML::LibXML->new->parse_fh(shift) );
-}
-
 =head1 AUTHOR
 
 Ruslan Zakirov E<lt>ruz@bestpractical.comE<gt>
