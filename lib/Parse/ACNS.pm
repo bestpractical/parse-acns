@@ -6,12 +6,6 @@ use warnings;
 package Parse::ACNS;
 our $VERSION = '0.01';
 
-use File::ShareDir ();
-use File::Spec ();
-use Scalar::Util qw(blessed);
-use XML::LibXML;
-use XML::Compile::Schema;
-
 =head1 NAME
 
 Parse::ACNS - parser for Automated Copyright Notice System (ACNS) XML
@@ -27,6 +21,12 @@ Parse::ACNS - parser for Automated Copyright Notice System (ACNS) XML
 =head1 DESCRIPTION
 
 =cut
+
+use File::ShareDir ();
+use File::Spec ();
+use Scalar::Util qw(blessed);
+use XML::LibXML;
+use XML::Compile::Schema;
 
 our %CACHE = (
 );
