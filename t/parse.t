@@ -15,6 +15,10 @@ foreach my $spec (qw(0.6 0.7)) {
             ok($got, "parsed '$file' in $version version mode");
             my $expected = LoadFile( substr($file, 0, -3) .'yaml' );
             is_deeply($got, $expected, 'data matches expected');
+            if ( $ENV{'TEST_VERBOSE'} ) {
+                require Data::Dumper;
+                diag( Data::Dumper::Dumper( $got ) );
+            }
         }
     }
 }
