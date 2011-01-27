@@ -5,7 +5,6 @@ readme_from 'lib/Parse/ACNS.pm';
 install_share;
 
 requires 'XML::Compile::Schema';
-requires 'XML::LibXML';
 
 requires 'Carp';
 requires 'File::Spec';
