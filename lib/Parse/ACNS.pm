@@ -88,7 +88,8 @@ sub init {
     $self->{'reader'} = $CACHE{$path}{'reader'};
     unless ( $self->{'reader'} ) {
         my $schema = XML::Compile::Schema->new( [$path] );
-        $self->{'reader'} = $schema->compile( READER => 'Infringement' );
+        $self->{'reader'} = $CACHE{$path}{'reader'}
+            = $schema->compile( READER => 'Infringement' );
     }
     return $self;
 }
