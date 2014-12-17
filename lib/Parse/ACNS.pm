@@ -187,7 +187,7 @@ sub parse {
         my $root = $xml->documentElement;
         my $uri = $root->namespaceURI || '';
         if ( !$uri || ($uri eq 'http://www.movielabs.com/ACNS' && !$root->can('setNamespaceDeclURI')) ) {
-            my $list = $root->getElementsByTagNameNS($root->namespaceURI, '*');
+            my $list = $root->getElementsByTagNameNS($uri, '*');
             $list->unshift($root);
             $list->foreach(sub {
                 $_->setNamespace('http://www.acns.net/ACNS', $root->prefix, 1);
